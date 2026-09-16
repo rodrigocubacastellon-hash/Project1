@@ -20,3 +20,31 @@ class Torre
             columna = c;
             isBlack = color;
         }
+          // Valida si el movimiento es legal para una torre:
+        // solo puede moverse en linea recta (misma fila o misma columna)
+        bool esMovimientoValido(short nuevaFila, short nuevaColumna)
+        {
+            if (nuevaFila < 1 || nuevaFila > 8 || nuevaColumna < 1 || nuevaColumna > 8)
+                return false;
+
+            if (nuevaFila == fila && nuevaColumna == columna)
+                return false; // no se movio
+
+            return (nuevaFila == fila) || (nuevaColumna == columna);
+        }
+
+        void mover(short nuevaFila, short nuevaColumna)
+        {
+            if (esMovimientoValido(nuevaFila, nuevaColumna))
+            {
+                cout << "Moviendo torre de (" << fila << "," << columna
+                     << ") a (" << nuevaFila << "," << nuevaColumna << ")" << endl;
+                fila = nuevaFila;
+                columna = nuevaColumna;
+            }
+            else
+            {
+                cout << "Movimiento invalido: (" << nuevaFila << "," << nuevaColumna
+                     << ") no es una linea recta valida para la torre." << endl;
+            }
+        }
