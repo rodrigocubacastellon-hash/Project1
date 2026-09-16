@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+class Torre
+{
+    public:
+        short fila;
+        short columna;
+
+        Torre()
+        {
+            fila = 1;
+            columna = 1;
+            isBlack = true;
+        }
+
+        Torre(short f, short c, bool color)
+        {
+            fila = f;
+            columna = c;
+            isBlack = color;
+        }
