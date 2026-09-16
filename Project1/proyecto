@@ -48,3 +48,12 @@ class Torre
                      << ") no es una linea recta valida para la torre." << endl;
             }
         }
+         void mostrarPosicion()
+        {
+            cout << "Torre " << (isBlack ? "Negra" : "Blanca")
+                 << " esta en fila " << fila << ", columna " << columna << endl;
+        }
+
+    private:
+        bool isBlack;
+};
