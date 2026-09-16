@@ -57,3 +57,19 @@ class Torre
     private:
         bool isBlack;
 };
+int main()
+{
+    Torre torreBlanca(1, 1, false);
+    torreBlanca.mostrarPosicion();
+
+    torreBlanca.mover(1, 8);   // valido: misma fila
+    torreBlanca.mostrarPosicion();
+
+    torreBlanca.mover(5, 8);   // valido: misma columna
+    torreBlanca.mostrarPosicion();
+
+    torreBlanca.mover(4, 3);   // invalido: no es fila ni columna igual
+    torreBlanca.mostrarPosicion();
+
+    return 0;
+}
